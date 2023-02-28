@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "475666538584",
+    "project_id": "my-car-478bd",
+    "storage_bucket": "my-car-478bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475666538584:android:c69b6f5e663030ccdbea2d",
+        "android_client_info": {
+          "package_name": "com.example.admin_panal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475666538584-utk8nkf9hcnkcadcek4jnj1sctoo8c16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjBXlDVntGuT7_LSXvLk7Ku7z8jNsiMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475666538584-utk8nkf9hcnkcadcek4jnj1sctoo8c16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475666538584:android:38371f7c141e7fb8dbea2d",
+        "android_client_info": {
+          "package_name": "com.firebase.mycar_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475666538584-utk8nkf9hcnkcadcek4jnj1sctoo8c16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjBXlDVntGuT7_LSXvLk7Ku7z8jNsiMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475666538584-utk8nkf9hcnkcadcek4jnj1sctoo8c16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
