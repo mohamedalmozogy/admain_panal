@@ -1,4 +1,6 @@
+import 'package:admin_panal/screens/ads_screen.dart';
 import 'package:admin_panal/screens/home_screen.dart';
+import 'package:admin_panal/modals/binding.dart';
 import 'package:admin_panal/screens/new_product_screen.dart';
 import 'package:admin_panal/screens/product_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -19,10 +21,12 @@ class adminpanal extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: binding(),
       home: homeScreen(),
       getPages: [
         GetPage(name: '/products', page: () => ProductScreen()),
-        GetPage(name: '/products/naw', page: () => newPeoductscreen())
+        GetPage(name: '/products/naw', page: () => newPeoductscreen()),
+        GetPage(name: '/ADS', page: () => adsScreen())
       ],
     );
   }

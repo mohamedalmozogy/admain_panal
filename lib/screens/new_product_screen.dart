@@ -1,15 +1,13 @@
 import 'dart:io';
 
-import 'package:admin_panal/screens/modals/modals.dart';
-import 'package:admin_panal/services/store.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-import 'modals/constants.dart';
+import '../modals/constants.dart';
 
 class newPeoductscreen extends StatefulWidget {
   @override
@@ -17,7 +15,7 @@ class newPeoductscreen extends StatefulWidget {
 }
 
 final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
-final _store = Store();
+
 bool _saving = false;
 String? _carmoldel;
 String? _cartype;
@@ -25,6 +23,7 @@ String? _year;
 String? _category;
 String? _pname;
 String? _price;
+String? _contry;
 File? _image;
 String Url = '';
 String? _discreption;
@@ -312,6 +311,55 @@ class _newPeoductscreenState extends State<newPeoductscreen> {
                       ),
                     ),
                     Text(
+                      'بلد الصنع',
+                      style: TextStyle(fontSize: 22),
+                    ),
+                    SizedBox(height: 8),
+                    Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: DropdownButtonFormField(
+                        validator: (value) {
+                          if (value == null) {
+                            return 'ادخل بلد الصنع';
+                          }
+                        },
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        decoration: InputDecoration(
+                          hintTextDirection: TextDirection.rtl,
+                          border: OutlineInputBorder(),
+                          hintText: 'بلد الصنع',
+                          hintStyle: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        items: [
+                          DropdownMenuItem(
+                              child: Text('الصين'), value: 'الصين'),
+                          DropdownMenuItem(
+                              child: Text('كوريا'), value: 'كوريا'),
+                          DropdownMenuItem(
+                              child: Text('اليابان'), value: 'اليابان'),
+                          DropdownMenuItem(
+                              child: Text('تايوان'), value: 'تايوان'),
+                          DropdownMenuItem(
+                              child: Text('المانيا'), value: 'المانيا'),
+                          DropdownMenuItem(
+                              child: Text('امريكا'), value: 'امريكا'),
+                          DropdownMenuItem(child: Text('اخرى'), value: 'اخرى'),
+                        ],
+                        onChanged: (value) {
+                          _contry = value;
+                          setState(() {});
+                        },
+                      ),
+                    ),
+                    Text(
                       'السعر',
                       style: TextStyle(fontSize: 22),
                     ),
@@ -444,6 +492,7 @@ class _newPeoductscreenState extends State<newPeoductscreen> {
                                   kprice: _price,
                                   kdiscreption: _discreption,
                                   kimageUrl: Url,
+                                  kcontry: _contry,
                                 }).then((value) {
                                   setState(() {
                                     _saving = false;
